@@ -4,5 +4,5 @@ output "vpc" {
 }
 output "subnets" {
   description = "subnets"
-  value = [aws_subnet.sentinel_demo_subnet.*.id]
+  value = aws_subnet.sentinel_demo_subnet.*.id
 }
