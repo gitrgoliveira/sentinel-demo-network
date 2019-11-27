@@ -15,7 +15,7 @@ variable "cidr_blocks" {
 
 variable "owner" {
   description = "Owner tag"
-  default     = "StepStone"
+  default     = "travelex"
 }
 
 variable "namespace" {

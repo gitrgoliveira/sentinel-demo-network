@@ -30,10 +30,10 @@ resource "aws_vpc" "sentinel_demo_vpc" {
 }
 
 resource "aws_subnet" "sentinel_demo_subnet" {
-  count                   = "${length(var.cidr_blocks)}"
+  count                   = length(var.cidr_blocks)
   vpc_id                  = aws_vpc.sentinel_demo_vpc.id
-  availability_zone       = "${data.aws_availability_zones.available.names[count.index]}"
-  cidr_block              = "${var.cidr_blocks[count.index]}"
+  availability_zone       = data.aws_availability_zones.available.names[count.index]
+  cidr_block              = var.cidr_blocks[count.index]
   map_public_ip_on_launch = true
 
   tags = {
