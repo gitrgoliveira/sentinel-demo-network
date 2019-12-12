@@ -15,7 +15,7 @@ variable "cidr_blocks" {
 
 variable "owner" {
   description = "Owner tag"
-  default     = "travelex"
+  default     = "demoric"
 }
 
 variable "namespace" {
