@@ -41,3 +41,12 @@ resource "aws_subnet" "sentinel_demo_subnet" {
     owner          = var.owner
   }
 }
+
+resource "aws_internet_gateway" "sentinel_demo_gateway" {
+  vpc_id = aws_vpc.sentinel_demo_vpc.id
+
+  tags = {
+    Name           = var.namespace
+    owner          = var.owner
+  }
+}
